@@ -104,6 +104,8 @@ open "玖章 - 本地PDF电子签章工具v2.0.html"
 # 例如用 Python 起一个本地静态服务
 python3 -m http.server 8080
 # 然后浏览器访问 http://localhost:8080
+我已经部署在线上托管平台，你可以直接访问👇下方这个地址使用（仅供学习参考😁）
+https://jiuzhang.netlify.app/
 ```
 
 ### 方式三：嵌入到自己的项目
