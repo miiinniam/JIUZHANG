@@ -794,6 +794,141 @@
         }
         html.dark .feature-pill { background: rgba(79, 138, 247, 0.18); color: #93c5fd; }
 
+        .starter-guide {
+            position: relative;
+            margin-bottom: 18px;
+            padding: 18px;
+            border-radius: 22px;
+            background:
+                linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(247, 239, 226, 0.92)),
+                radial-gradient(circle at 12% 10%, rgba(180, 35, 24, 0.12), transparent 30%);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-md);
+        }
+
+        .starter-guide-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .starter-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(180, 35, 24, 0.08);
+            color: var(--stamp);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        .starter-step {
+            position: relative;
+            display: flex;
+            gap: 13px;
+            height: 100%;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.74);
+            border: 1px solid rgba(108, 77, 45, 0.12);
+            box-shadow: 0 10px 26px rgba(27, 37, 59, 0.06);
+        }
+
+        .starter-step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: var(--text-strong);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.16);
+        }
+
+        .starter-step.recommended {
+            border-color: rgba(180, 35, 24, 0.22);
+            background: linear-gradient(180deg, rgba(255, 250, 246, 0.92), rgba(255, 255, 255, 0.78));
+        }
+
+        .starter-step.recommended .starter-step-number {
+            background: var(--stamp);
+        }
+
+        .starter-tag {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 6px;
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: rgba(180, 35, 24, 0.09);
+            color: var(--stamp);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .starter-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .starter-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 800;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .starter-action-btn.primary {
+            background: var(--stamp);
+            color: #fff;
+            box-shadow: 0 12px 24px rgba(180, 35, 24, 0.18);
+        }
+
+        .starter-action-btn.secondary {
+            background: rgba(21, 71, 168, 0.08);
+            color: var(--primary);
+            border-color: rgba(21, 71, 168, 0.12);
+        }
+
+        .starter-action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        html.dark .starter-guide {
+            background:
+                linear-gradient(135deg, rgba(20, 27, 45, 0.96), rgba(11, 15, 26, 0.92)),
+                radial-gradient(circle at 12% 10%, rgba(248, 113, 113, 0.16), transparent 30%);
+        }
+
+        html.dark .starter-step {
+            background: rgba(15, 23, 42, 0.58);
+            border-color: rgba(148, 163, 184, 0.16);
+        }
+
+        html.dark .starter-step.recommended {
+            background: linear-gradient(180deg, rgba(56, 29, 35, 0.56), rgba(15, 23, 42, 0.6));
+            border-color: rgba(248, 113, 113, 0.28);
+        }
+
         /* ===== v2.0 Hero / 封面 / Logo ===== */
         .brand-logo {
             display: inline-flex;
@@ -1146,25 +1281,49 @@
                 <button onclick="showHelpModal()" class="feature-pill" style="cursor:pointer;border:none;background:rgba(180,35,24,0.08);color:#B42318;">❔ 查看完整功能</button>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-                <div class="drag-zone bg-white rounded-xl md:rounded-2xl p-6 md:p-8 border-2 border-dashed border-blue-300 text-center cursor-pointer hover:border-primary"
-                    id="pdfDropZone" onclick="document.getElementById('pdfInput').click()">
-                    <input type="file" id="pdfInput" accept=".pdf" class="hidden" onchange="handlePDFUpload(event)">
-                    <div
-                        class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                        <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                        </svg>
+            <div class="starter-guide">
+                <div class="starter-guide-header">
+                    <div>
+                        <span class="starter-eyebrow">首次使用按这 3 步走</span>
+                        <h2 class="mt-2 text-xl md:text-2xl font-semibold text-gray-900">先准备签字或印章，再上传要盖章的 PDF</h2>
+                        <p class="mt-1 text-sm text-gray-500 leading-relaxed">你可以上传已有印章图片，也可以直接在这里制作印章、手写签名。准备好后再打开 PDF，进入编辑区拖到页面上即可。</p>
                     </div>
-                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1 md:mb-2">拖拽PDF到此处</h3>
-                    <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">或点击选择文件</p>
-                    <span
-                        class="inline-flex items-center px-2 py-1 md:px-3 md:py-1 rounded-full text-xs font-medium bg-blue-50 text-primary">支持
-                        PDF 格式</span>
+                    <button onclick="showHelpModal()" class="starter-action-btn secondary touch-friendly">看完整教程</button>
                 </div>
 
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="starter-step recommended">
+                        <span class="starter-step-number">1</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-gray-900">准备签字 / 印章 <span class="starter-tag">推荐先做</span></h3>
+                            <p class="mt-1 text-xs md:text-sm text-gray-500 leading-relaxed">没有素材也没关系，可以立即手写签名或生成圆形、椭圆、方形、姓名章。</p>
+                            <div class="starter-actions">
+                                <button onclick="openSignatureModal()" class="starter-action-btn primary touch-friendly">手写签名</button>
+                                <button onclick="showStampMaker()" class="starter-action-btn secondary touch-friendly">制作印章</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="starter-step">
+                        <span class="starter-step-number">2</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-gray-900">或上传已有图片</h3>
+                            <p class="mt-1 text-xs md:text-sm text-gray-500 leading-relaxed">已有 PNG/JPG 印章或签字图，拖到下方粉色区域即可保存到印章库。</p>
+                            <p class="mt-2 text-[11px] text-gray-400">文件名包含“签名 / 签字 / sign”会自动归入签字库。</p>
+                        </div>
+                    </div>
+
+                    <div class="starter-step">
+                        <span class="starter-step-number">3</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-gray-900">上传 PDF 开始盖章</h3>
+                            <p class="mt-1 text-xs md:text-sm text-gray-500 leading-relaxed">选择合同或文件后，会进入编辑区。点击“加签字 / 加印章”，拖到合适位置，再导出 PDF。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
                 <div class="drag-zone bg-white rounded-xl md:rounded-2xl p-6 md:p-8 border-2 border-dashed border-pink-300 text-center cursor-pointer hover:border-pink-500"
                     id="stampDropZone" onclick="document.getElementById('stampInput').click()">
                     <input type="file" id="stampInput" accept="image/png,image/jpeg,image/jpg,image/webp" class="hidden"
@@ -1176,11 +1335,31 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
                     </div>
-                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1 md:mb-2">拖拽印章/签字图片</h3>
-                    <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">PNG透明背景效果最佳</p>
+                    <span class="feature-pill mb-2" style="background:rgba(180,35,24,0.08);color:#B42318;">第 1 步：先准备</span>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1 md:mb-2">拖拽印章/签字图片到这里</h3>
+                    <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">或点击选择图片；也可以用上方按钮直接制作 / 手写</p>
                     <span
                         class="inline-flex items-center px-2 py-1 md:px-3 md:py-1 rounded-full text-xs font-medium bg-pink-50 text-pink-600">支持
-                        PNG / JPG</span>
+                        PNG / JPG / WebP</span>
+                </div>
+
+                <div class="drag-zone bg-white rounded-xl md:rounded-2xl p-6 md:p-8 border-2 border-dashed border-blue-300 text-center cursor-pointer hover:border-primary"
+                    id="pdfDropZone" onclick="document.getElementById('pdfInput').click()">
+                    <input type="file" id="pdfInput" accept=".pdf" class="hidden" onchange="handlePDFUpload(event)">
+                    <div
+                        class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                    </div>
+                    <span class="feature-pill mb-2">第 2 步：再上传文件</span>
+                    <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-1 md:mb-2">拖拽需要盖章的 PDF 到这里</h3>
+                    <p class="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">或点击选择文件，打开后就能添加签字和印章</p>
+                    <span
+                        class="inline-flex items-center px-2 py-1 md:px-3 md:py-1 rounded-full text-xs font-medium bg-blue-50 text-primary">支持
+                        PDF 格式</span>
                 </div>
             </div>
 
@@ -2001,6 +2180,8 @@
                 <div>
                     <h4 class="text-sm font-semibold text-gray-700 mb-2">v2.0 升级</h4>
                     <ul class="space-y-1.5 text-xs text-gray-600 list-disc list-inside">
+                        <li><b>推荐流程</b>：先准备签字/印章，再上传 PDF，最后拖动摆放并导出</li>
+                        <li><b>准备素材</b>：可上传 PNG/JPG/WebP 图片，也可直接手写签名或制作印章</li>
                         <li><b>暗色模式</b>：右上角太阳/月亮图标切换</li>
                         <li><b>文字签名生成</b>：印章制作 → 文字签名，5 种书法字体</li>
                         <li><b>椭圆 / 方形 / 姓名章</b>：印章制作模式中切换</li>
@@ -2015,7 +2196,7 @@
                 </div>
             </div>
             <div class="mt-5 p-3 rounded-lg bg-blue-50 border border-blue-100">
-                <p class="text-xs text-blue-700">💡 所有处理均在浏览器本地完成，PDF 与印章数据不会上传到任何服务器。</p>
+                <p class="text-xs text-blue-700">💡 新手建议：先在首页完成「手写签名 / 制作印章 / 上传印章图片」之一，再上传 PDF。所有处理均在浏览器本地完成，PDF 与印章数据不会上传到任何服务器。</p>
             </div>
         </div>
     </div>
@@ -2480,11 +2661,11 @@
 
             sigList.innerHTML = AppState.signatures.length
                 ? AppState.signatures.map(sig => createStampItemHTML(sig, 'signature')).join('')
-                : '<div class="col-span-full text-center text-gray-400 text-xs md:text-sm py-4">暂无签字，点击右上角手写签名</div>';
+                : '<div class="col-span-full text-center text-gray-400 text-xs md:text-sm py-4">暂无签字：点击上方「手写签名」，保存后再上传 PDF 盖章</div>';
 
             stampList.innerHTML = AppState.stamps.length
                 ? AppState.stamps.map(stamp => createStampItemHTML(stamp, 'stamp')).join('')
-                : '<div class="col-span-full text-center text-gray-400 text-xs md:text-sm py-4">暂无印章，拖拽图片到右侧区域或使用制作功能</div>';
+                : '<div class="col-span-full text-center text-gray-400 text-xs md:text-sm py-4">暂无印章：点击「制作印章」，或把印章图片拖到上方粉色区域</div>';
         }
 
         function createStampItemHTML(item, type) {
