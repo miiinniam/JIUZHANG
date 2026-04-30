@@ -12,7 +12,7 @@
 [![Version](https://img.shields.io/badge/version-v2.0-B42318.svg)](#)
 [![Platform](https://img.shields.io/badge/platform-Web-1547A8.svg)](#)
 [![Single File](https://img.shields.io/badge/single-HTML-22c55e.svg)](#)
-[![Made with](https://img.shields.io/badge/made%20with-❤️%20by%20Fayy-ff69b4.svg)](#)
+[![Made with](https://img.shields.io/badge/made%20with-❤️%20by%20FAYYPP杭-ff69b4.svg)](#)
 
 </div>
 
